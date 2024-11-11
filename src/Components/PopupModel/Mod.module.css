@@ -1,0 +1,72 @@
+.modelWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  background: rgba(47, 47, 47, 0.75);
+}
+
+.modelContainer {
+  width: 450px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 2000;
+}
+.modelContainer > button {
+  background: rgba(0, 31, 139, 1);
+  color: white;
+  padding: 5px 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 8px;
+  border-radius: 11px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -o-border-radius: 11px;
+}
+.colorSection {
+  display: flex;
+  margin: 20px 0;
+  justify-content: space-between;
+}
+.input {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.input > label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input > label > input {
+  width: 60%;
+  padding: 5px;
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(204, 204, 204, 1);
+  border-radius: 22px;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  -ms-border-radius: 22px;
+  -o-border-radius: 22px;
+}
+
+.color {
+  margin: 0 5px;
+}
+.color > p {
+  border-radius: 19px;
+  margin: 0;
+}
+.listColor {
+  display: flex;
+}

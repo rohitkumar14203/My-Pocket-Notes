@@ -1,0 +1,9 @@
+.left {
+  width: 30%;
+  position: relative;
+}
+
+.left > h1 {
+  text-align: center;
+  margin-top: 20px;
+}

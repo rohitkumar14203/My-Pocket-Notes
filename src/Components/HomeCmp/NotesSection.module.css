@@ -1,0 +1,29 @@
+.right {
+  width: 70%;
+  background: rgba(218, 229, 245, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right > h1 {
+  margin-bottom: 1rem;
+}
+
+.right > p {
+  line-height: 1.4;
+}
+
+footer {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+footer > p {
+  text-align: center;
+  margin-left: 5px;
+}
