@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./NotesSection.module.css";
 import homeImg from "./homeImg.png";
 

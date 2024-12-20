@@ -65,3 +65,30 @@ ul > li.selected:hover > span.outer {
   overflow-y: auto;
   padding-right: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .button {
+    bottom: 80px;
+    right: 15px;
+  }
+
+  a {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .groupList {
+    max-height: calc(100vh - 120px);
+  }
+
+  ul > li {
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  ul > li > span.outer {
+    width: 35px;
+    height: 35px;
+  }
+}

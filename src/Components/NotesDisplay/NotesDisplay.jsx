@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import styles from "./NotesDisplay.module.css";
 import sendBtn1 from "./sendBtn1.png";
 import sendBtn2 from "./sendBtn2.png";
 
-const NotesDisplay = ({ group }) => {
+const NotesDisplay = ({ group, onBack }) => {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState({});
 
@@ -48,6 +49,11 @@ const NotesDisplay = ({ group }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
+        {window.innerWidth <= 768 && (
+          <button className={styles.backButton} onClick={onBack}>
+            ←
+          </button>
+        )}
         <span className={styles.circle} style={{ background: group.color }}>
           <span className={styles.initials}>{getInitials(group.text)}</span>
         </span>
@@ -79,6 +85,14 @@ const NotesDisplay = ({ group }) => {
       </div>
     </div>
   );
+};
+
+NotesDisplay.propTypes = {
+  group: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+  }).isRequired,
+  onBack: PropTypes.func.isRequired,
 };
 
 export default NotesDisplay;

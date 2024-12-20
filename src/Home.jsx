@@ -9,6 +9,16 @@ const Home = () => {
     return savedGroups ? JSON.parse(savedGroups) : [];
   });
   const [selectedGroup, setSelectedGroup] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("createdGroups", JSON.stringify(groups));
@@ -20,17 +30,21 @@ const Home = () => {
 
   return (
     <div className="container">
-      <GroupSection
-        groups={groups}
-        updateGroups={updateGroups}
-        selectedGroup={selectedGroup}
-        setSelectedGroup={setSelectedGroup}
-      />
-      {selectedGroup ? (
-        <NotesDisplay group={selectedGroup} />
+      {isMobile && selectedGroup ? (
+        <NotesDisplay
+          group={selectedGroup}
+          onBack={() => setSelectedGroup(null)}
+        />
       ) : (
-        <NotesSection groups={groups} />
+        <GroupSection
+          groups={groups}
+          updateGroups={updateGroups}
+          selectedGroup={selectedGroup}
+          setSelectedGroup={setSelectedGroup}
+        />
       )}
+      {!isMobile && selectedGroup && <NotesDisplay group={selectedGroup} />}
+      {!isMobile && !selectedGroup && <NotesSection groups={groups} />}
     </div>
   );
 };

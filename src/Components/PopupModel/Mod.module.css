@@ -19,6 +19,7 @@
   padding: 20px;
   z-index: 2000;
 }
+
 .modelContainer > button {
   background: rgba(0, 31, 139, 1);
   color: white;
@@ -69,4 +70,27 @@
 }
 .listColor {
   display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .modelContainer {
+    width: 90%;
+    height: auto;
+    min-height: 200px;
+    padding: 15px;
+  }
+
+  .input > label {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input > label > input {
+    width: 100%;
+  }
+
+  .colorSection {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
